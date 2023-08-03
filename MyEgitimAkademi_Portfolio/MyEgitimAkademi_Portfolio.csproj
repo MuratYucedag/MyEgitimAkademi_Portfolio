@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -123,8 +131,32 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SkillController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\About.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,8 +169,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -150,6 +199,45 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\iportfolio-starter\assets\css\style-starter.css" />
+    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\about.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\award.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\award1.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\award2.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\awards.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\banner.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\client1.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\client2.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\client3.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\client4.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\client5.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\client6.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\clients.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\file.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\file1.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\file2.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\skills.png" />
+    <Content Include="Templates\iportfolio-starter\assets\images\team1.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\team2.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\team3.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\team4.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template1.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template2.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template3.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template4.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template5.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template6.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template7.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\images\template8.jpg" />
+    <Content Include="Templates\iportfolio-starter\assets\js\bootstrap.min.js" />
+    <Content Include="Templates\iportfolio-starter\assets\js\jquery-3.3.1.min.js" />
+    <Content Include="Templates\iportfolio-starter\assets\js\owl.carousel.js" />
+    <Content Include="Templates\iportfolio-starter\assets\js\theme-change.js" />
+    <Content Include="Templates\iportfolio-starter\contact.html" />
+    <Content Include="Templates\iportfolio-starter\index.html" />
+    <Content Include="Templates\iportfolio-starter\portfolio.html" />
+    <Content Include="Templates\iportfolio-starter\starter-license-W3Layouts.txt" />
     <Content Include="Templates\sidebar-01\css\bootstrap.min.css" />
     <Content Include="Templates\sidebar-01\css\bootstrap\mixins\_border-radius.css" />
     <Content Include="Templates\sidebar-01\css\bootstrap\mixins\_screen-reader.css" />
@@ -279,10 +367,18 @@
     <Content Include="Templates\sidebar-01\scss\style.scss" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Skill\Index.cshtml" />
+    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\iportfolio-starter\assets\fonts\FontAwesome.otf" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\AddService.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -296,6 +392,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
