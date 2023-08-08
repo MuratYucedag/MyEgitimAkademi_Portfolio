@@ -7,6 +7,11 @@
       <Diagram DiagramId="6962557cab1c46b19359c3e90ee2de27" Name="Diagram1">
         <EntityTypeShape EntityType="MyPortfolioDbModel.About" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyPortfolioDbModel.Service" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDbModel.Testimonial" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MyPortfolioDbModel.Category" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MyPortfolioDbModel.Project" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MyPortfolioDbModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="3.75" />
+        <AssociationConnector Association="MyPortfolioDbModel.FK_Project_Category1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

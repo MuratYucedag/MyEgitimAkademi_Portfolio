@@ -1,0 +1,23 @@
+﻿@model MyEgitimAkademi_Portfolio.Models.Testimonial
+
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Referans Güncelleme Sayfası</h2>
+
+<form method="post">
+    <label>Referans ID</label>
+    @Html.TextBoxFor(x => x.TestimonialID, new { @class = "form-control" })
+    <label>Referans Adı Soyadı</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <label>Referans Ünvan</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Referans Görsel</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <label>Referans Yorumu</label>
+    @Html.TextAreaFor(x => x.Comment, 5, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Verileri Güncelle</button>
+</form>
