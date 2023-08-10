@@ -31,6 +31,8 @@
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="ProjectCategory" Type="int" />
+          <Property Name="CompleteDay" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -144,6 +146,8 @@
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ProjectCategory" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="MyPortfolioDbModel.FK_Project_Category1" FromRole="Project" ToRole="Category" />
+          <Property Name="CompleteDay" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -215,6 +219,8 @@
           <EntitySetMapping Name="Project">
             <EntityTypeMapping TypeName="MyPortfolioDbModel.Project">
               <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CompleteDay" ColumnName="CompleteDay" />
                 <ScalarProperty Name="ProjectCategory" ColumnName="ProjectCategory" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

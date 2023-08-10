@@ -18,6 +18,8 @@ namespace MyEgitimAkademi_Portfolio.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public Nullable<int> ProjectCategory { get; set; }
+        public Nullable<int> CompleteDay { get; set; }
+        public Nullable<decimal> Price { get; set; }
     
         public virtual Category Category { get; set; }
     }
