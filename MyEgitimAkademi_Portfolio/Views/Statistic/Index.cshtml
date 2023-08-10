@@ -6,10 +6,30 @@
 
 <h2>İstatistik Sayfası</h2>
 
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-        <h5 class="card-title">Primary card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+<div class="card text-white bg-primary mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:white">Toplam Proje Sayısı: @ViewBag.totalProjectCount</h5>
+</div>
+
+<div class="card text-white bg-danger mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:white">Toplam Referans Sayısı: @ViewBag.totalTestimonialCount</h5>
+</div>
+
+<div class="card text-white bg-warning mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:white">Toplam Çalışma Günü: @ViewBag.sumWorkDay</h5>
+</div>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:white">Ortalama Proje Çalışma Günü: @ViewBag.avgWorkDay</h5>
+</div>
+
+<div class="card text-white bg-success mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:white">Ortalama Proje Fiyatı: @ViewBag.avgPrice ₺</h5>
+</div>
+
+<div class="card text-white bg-secondary mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:white">En Yüksek Fiyatlı Proje: @ViewBag.maxPriceProject</h5>
+</div>
+
+<div class="card text-white bg-light mb-3" style="max-width: 100%">
+    <h5 class="card-title" style="margin-left:20px; margin-top:5px; color:black">AspNet Core Kategorisi Proje Sayısı: @ViewBag.categoryCountByName</h5>
 </div>

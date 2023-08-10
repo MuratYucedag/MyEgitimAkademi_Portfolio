@@ -394,6 +394,9 @@
     <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Statistic\Index.cshtml" />
+    <Content Include="Views\Default\PartialHead.cshtml" />
+    <Content Include="Views\Default\PartialNavbar.cshtml" />
+    <Content Include="Views\Default\PartialQuickContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
