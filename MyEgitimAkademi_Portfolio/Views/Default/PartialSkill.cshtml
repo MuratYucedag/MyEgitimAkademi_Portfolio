@@ -1,0 +1,42 @@
+﻿@using MyEgitimAkademi_Portfolio.Models
+@model List<Skill>
+<section class="w3l-homeblock2" id="skills">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6 align-self">
+                    <div class="position-relative px-lg-5 mx-lg-0 mx-md-5 image-padding">
+                        <img src="~/Templates/iportfolio-starter/assets/images/skills.png" alt="" class="radius-image img-fluid">
+                        <div class="position-absolute-images">
+                            <img src="~/Templates/iportfolio-starter/assets/images/file.png" class="img-fluid pos-img" alt="" />
+                            <img src="~/Templates/iportfolio-starter/assets/images/file1.png" class="img-fluid pos-img1" alt="" />
+                            <img src="~/Templates/iportfolio-starter/assets/images/file2.png" class="img-fluid pos-img2" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4">
+                    <span class="text">Yeteneklerim & Çalışma Alanlarım</span>
+                    <h3 class="title-big">
+                        Merhaba <span>ben bir yazılım mühendisiyim.</span>
+     
+                    </h3>
+                    <p class="mt-4">
+                        Full Stack Asp.Net Core Developer olarak sektörde uzun yıllardır hizmet vermekteyim.
+                    </p>
+                    <div class="skills-bars mt-5">
+                        @foreach (var item in Model)
+                        {
+                        <div class="progress-info">
+                            <h6 class="progress-tittle">@item.SkillTitle</h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: @item.SkillValue%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

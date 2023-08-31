@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+@Html.Action("PartialHead","Default")
+<body>
+    <!--header-->
+    @Html.Action("PartialNavbar","Default")
+    <!--/header-->
+    <!-- Domain Modal -->
+    @Html.Action("PartialQuickContact","Default")
+    <!-- //Domain modal -->
+    <!-- home page contact section -->
+    <section class="w3l-contactblock" id="contact">
+        <div class="midd-w3 py-5">
+            <div class="container py-lg-4 py-md-3">
+                <div class="contact-heading text-center">
+                    <span class="text">Bana Ulaşın</span>
+                    <h3 class="title-big">Beraber çalışmaya <span>hazır mısınız?</span></h3>
+                    <p class="mt-4">Hadi birlikte proje geliştirelim.</p>
+                </div>
+                <div class="row mt-md-5 mt-4 pt-lg-3">
+                    <div class="col-lg-5">
+                        <p>
+                            @ViewBag.description
+                        </p>
+                        <ul class="address mt-md-5 mt-4">
+                            <li class="mb-3">
+                                <p><span class="fa fa-phone"></span> <a href="tel:+404-11-22-89">@ViewBag.phone</a></p>
+                            </li>
+                            <li class="mb-4">
+                                <p><span class="fa fa-envelope-open"></span> <a href="mailto:@ViewBag.mail">@ViewBag.mail</a></p>
+                            </li>
+                            <li class="">
+                                <p><span class="fa fa-map-marker"></span> @ViewBag.addressDetail.</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-lg-7 mt-lg-0 mt-md-5 mt-4">
+                        <form method="post">
+                            <div class="twice-two">
+                                <input type="text" class="form-control" name="Name" id="w3lName" placeholder="Adınız Soyadınız..."
+                                       required="">
+                                <input type="email" class="form-control" name="Mail" id="w3lSender" placeholder="Email Adresiniz..."
+                                       required="">
+                            </div>
+                            <div class="twice">
+                                <input type="text" class="form-control" name="Subject" id="w3lSubject"
+                                       placeholder="Mesaj Konusu..." required="">
+                            </div>
+                            <textarea name="Message" class="form-control" id="w3lMessage" placeholder="Mesajınız"
+                                      required=""></textarea>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-secondary btn-style mt-4">Mesajı Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //home page contact section -->
+  @Html.Action("PartialScript")
+</body>
+</html>

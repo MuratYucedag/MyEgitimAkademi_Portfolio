@@ -31,5 +31,9 @@ namespace MyEgitimAkademi_Portfolio.Models
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Skill> Skill { get; set; }
+        public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
     }
 }

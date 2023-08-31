@@ -1,0 +1,28 @@
+﻿@model List<MyEgitimAkademi_Portfolio.Models.Service>
+<section class="w3l-homeblock1" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="text">Hizmetlerim</span>
+                    <h3 class="title-big"><span>Markanızı büyütün</span> ve işinizi genişletin</h3>
+                    <p class="mt-4">
+                        Aşağıda en sık çalışma alanlarımdan birkaç tanesine ulaşabilirsiniz. Bu alanlarda hizmet vermeye devam etmekteyim.
+                    </p>
+                    <ul class="service-list mt-md-5 mt-4">
+                        @foreach (var item in Model)
+                        {
+                            <li class="service-link"><a href="#">@item.ServiceName</a></li>
+                        }
+                    </ul>
+                    <a href="#url" class="btn btn-style btn-empty p-0">Tüm hizmetlerimi görün<span></span></a>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5">
+                    <div class="position-relative">
+                        <img src="~/Templates/iportfolio-starter/assets/images/about.jpg" alt="" class="radius-image img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
